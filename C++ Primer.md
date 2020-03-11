@@ -385,7 +385,84 @@ sizeof b;
     * 程序运行结束时会刷新缓冲区,但如果程序崩溃,输出缓冲区不会被刷新.
 
 * 关联输入输出流
-    * 如果
+![关联输入和输出流](关联输入和输出流.png)
 
+***
 
+## 文件输入输出
+
+* fstream常用操作
+![fstream常用操作](fstream常用操作.png)
+
+* fstream是iostream子类,因此可以在调用参数为iostream& 的地方传入fstream.
+
+* 如果需要用同一指针打开其他文件,需要先将close()当前的文件
+
+* fstream在离开作用域被销毁的时候回自动关闭.(析构)
+
+* 文件模式
+![文件模式](文件模式.png)
+
+* stringstream_string流
+![stringstream_string流](stringstream_string流.png)
+
+* 使用ostringstream
+![使用ostringstream](使用ostringstream.png)
+
+# 2020.03.11
+
+## 容器
+
+* 顺序容器类型
+![顺序容器类型](顺序容器类型.png)
+
+* 确定使用哪种顺序容器
+![确定使用哪种顺序容器](确定使用哪种顺序容器.png)
+
+* 容器操作
+![容器操作](容器操作.png)
+
+## 迭代器
+
+* 迭代器的范围:左闭右开,[begin,end)
+
+* begin()返回第一个元素位置的迭代器,rbegin()返回最后一个元素位置的迭代器,两个都可以进行++操作,但是移动的方向是相反的(在前面加c表示const).
+
+***
+
+* 容器定义和初始化
+![容器定义和初始化](容器定义和初始化.png)
+
+* 标准库array具有固定大小,是模板类型的一部分
+
+    ```
+    array<int, 42> // 类型是保存42个int的数组
+    array<int> // 错误,未指定大小
+    ```
+
+* 标准库array
+![标准库array](标准库array.png)
+
+* 赋值和swap
+![赋值和swap](赋值和swap.png)
+
+    * [为什么对string调用swap会导致迭代器失效](https://www.cnblogs.com/ll-10/p/9633968.html)
+
+    * [迭代器swap前后是否有效的判断](https://stackoverflow.com/questions/4124989/does-stdvectorswap-invalidate-iterators)
+
+* 容器的关系运算(== < >)是通过元素的关系运算得到的,如果元素没有实现对应的关系运算的功能,则不能进行比较.
+
+* 向顺序容器中添加元素的操作
+![向顺序容器中添加元素的操作](向顺序容器中添加元素的操作.png)
+
+* emplace_front,emplace,emplace_back分别对应于push_front,push,push_back.区别在于,push时是将参数中的对象拷贝到容器中,而emplace则是直接用参数在容器中构造元素.
+
+* 每个顺序容器(包括array)都有front成员函数,而除了forward_list之外所有顺序容器都有back成员函数,它们用于返回对应元素的引用.
+
+* at成员函数用于返回指定位置上的元素的引用.
+
+* 顺序容器的删除操作
+![顺序容器的删除操作](顺序容器的删除操作.png)
+
+* 
 
