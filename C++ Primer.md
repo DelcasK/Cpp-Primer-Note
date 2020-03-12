@@ -464,5 +464,51 @@ sizeof b;
 * 顺序容器的删除操作
 ![顺序容器的删除操作](顺序容器的删除操作.png)
 
-* 
+* forward_list特殊操作:因为单链表对当前元素的操作需要改变前面元素的指针,而从当前元素获取前一位元素指针的操作是困难的,因此forward_list定义insert_after,emplace_after,erase_after操作.
+
+# 2020.03.12
+
+* forward_list插入删除操作
+![forward_list插入删除操作](forward_list插入删除操作.png)
+
+* resize可以改变容器的大小(array除外),如果变小,删除后面的元素,如果变大,新增元素.
+
+* 容器的改变对迭代器,指针,引用的影响
+![容器的改变对迭代器,指针,引用的影响](容器的改变对迭代器,指针,引用的影响.png)
+
+* 当在循环中改变了容器的大小,则要注意实时更新迭代器,如end()等,以免迭代器失效导致错误.
+
+* string replace
+    ```
+    s.replace(11, 3, "aaaaa");
+    // 在下标11的位置后删除3个字符,再插入"aaaaa"5个字符.
+    ```
+
+* string搜索操作
+![string搜索操作](string搜索操作.png)
+
+* string compare方法
+![compare方法](compare方法.png)
+
+* string和数值之间的转换
+![string和数值之间的转换](string和数值之间的转换.png)
+
+## 容器适配器
+
+* 容器适配器定义
+![容器适配器定义](容器适配器定义.png)
+
+* stack操作
+![stack操作](stack操作.png)
+
+* queue操作
+![queue操作](queue操作.png)
+
+# 泛型算法
+
+* find(it1, it2, val);  
+//在it1,it2两个迭代器之间查找值为val.
+
+* 泛型算法概述
+![泛型算法概述](泛型算法概述.png)
 
