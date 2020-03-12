@@ -2,9 +2,8 @@
 * 根据模板创建类和函数的过程叫实例化
 
 * 引用不是对象
-这表明
 
-* 老式编译器创建vector<vector<int>>时要写为"vector<vector<int> >"(加空格)
+* 老式编译器创建vector\<vector\<int>>时要写为"vector\<vector\<int> >"(加空格)
 
 * size_t是无符号类型,可用于表示内存中任意对象的大小,由cstddef头文件定义
 
