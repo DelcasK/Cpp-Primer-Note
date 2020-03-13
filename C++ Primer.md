@@ -511,3 +511,105 @@ sizeof b;
 * 泛型算法概述
 ![泛型算法概述](泛型算法概述.png)
 
+# 2020.03.13
+
+* 算法不用执行容器的操作
+![算法不用执行容器的操作](算法不用执行容器的操作.png)
+
+## 只读算法(accumulate,equal)
+![只读算法(accumulate,equal)](只读算法(accumulate,equal).png)
+
+## 写容器算法
+
+* 写容器算法的范围规定
+![写容器算法的范围规定](写容器算法的范围规定.png)
+
+* 算法不检查写操作
+![算法不检查写操作](算法不检查写操作.png)
+
+* 插入迭代器(back_inserter)
+![back_inserter](back_inserter.png)
+
+* 拷贝算法(copy,replace)
+![拷贝算法(copy,replace)](拷贝算法(copy,replace).png)
+
+* sort算法用类型定义的<符号进行进行
+
+* 重排容器元素的算法
+![重排容器元素的算法](重排容器元素的算法.png)
+
+* 重新定义sort的排序方式
+![向算法传递函数](向算法传递函数.png)
+
+## lambda表达式
+
+* 函数作为谓词可能出现的问题
+![谓词可能出现的问题](谓词可能出现的问题.png)
+如,希望把长度大于x的string作为true,如果拿普通函数作为一元谓词,需要为每一个x设计一个函数
+
+* lambda简介
+![lambda简介](lambda简介.png)
+
+* 向lambda传递参数
+![向lambda传递参数](向lambda传递参数.png)
+
+* 使用捕获列表
+![使用捕获列表](使用捕获列表.png)
+
+* lambda实例
+![lambda实例](lambda实例.png)
+![lambda实例(for_each)](lambda实例(for_each).png)
+
+* 完整程序
+![完整程序](完整程序.png)
+
+* lambda实现细节
+![lambda实现细节](lambda实现细节.png)
+
+* 值捕获和引用捕获
+![值捕获和引用捕获](值捕获和引用捕获.png)
+
+* 隐式捕获
+![隐式捕获](隐式捕获.png)
+
+* 捕获方式总结列表
+![lambda捕获列表](lambda捕获列表.png)
+
+* 指定lambda返回类型
+![指定lambda返回类型](指定lambda返回类型.png)
+
+* 对于没有捕获列表的lambda函数,实际上是可以用普通函数来代替作为谓语的,具体可根据实际情况决定
+
+## 标准库bind函数
+
+* 举例的函数
+![check_size函数](check_size函数.png)
+
+* bind函数及实例.png
+![bind函数及实例](bind函数及实例.png)
+
+* 命名空间placeholders
+![命名空间placeholders](命名空间placeholders.png)
+
+* bind引用参数
+![bind引用参数](bind引用参数.png)
+
+## 迭代器
+* 迭代器种类
+![迭代器种类](迭代器种类.png)
+
+* 插入迭代器
+![插入迭代器](插入迭代器.png)
+
+* iostream迭代器
+    * istream_iterator操作
+    ![istream_iterator操作](istream_iterator操作.png)
+    ![istream_iterator操作表](istream_iterator操作表.png)
+
+    * istream_iterator懒惰求值:在读取数据时迭代器并不会立即读取,直到我们使用迭代器时才真正读取
+
+    * ostream_iterator操作
+    ![ostream_iterator操作](ostream_iterator操作.png)
+
+    * 使用流迭代器处理类类型
+    ![使用流迭代器处理类类型](使用流迭代器处理类类型.png)
