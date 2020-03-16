@@ -708,8 +708,107 @@ sizeof b;
 
 ## 动态内存与智能指针
 
+* shared_ptr允许多个指针指向同一个对象,unique_ptr独占所指向的对象,weak_ptr表示弱引用,指向shared_ptr所管理的对象. 三种类型都定义在memory头文件中.
 
+### shared_ptr类
+
+* shared_ptr操作
+![shared_ptr操作](shared_ptr操作.png)
+
+* make_shared函数
+![make_shared函数](make_shared函数.png)
+
+* shared_ptr拷贝和赋值
+![shared_ptr拷贝和赋值](shared_ptr拷贝和赋值.png)
+
+* shared_ptr自动释放相关联的内存
+![shared_ptr自动释放相关联的内存](shared_ptr自动释放相关联的内存.png)
+
+* shared_ptr实例
+![shared_ptr实例](shared_ptr实例.png)
+
+* new 动态分配内存,可以用const修饰
+
+* delete 删除动态分配的内存,delete后面跟着的是指针.
+
+* delete之后要空置指针,否则即出现野指针
+
+* shared_ptr与new结合使用
+![shared_ptr与new结合使用](shared_ptr与new结合使用.png)
+
+* 不要混合使用普通指针和智能指针.
+
+* 也不要用get初始化另一个智能指针或智能指针赋值.
+
+* 其他shared_ptr操作
+![其他shared_ptr操作](其他shared_ptr操作.png)
+
+### 智能指针和异常
+
+* 用智能指针自调用析构函数的特性来降低内存泄漏异常发生的概率.
+
+* 智能指针和哑类
+![智能指针和哑类](智能指针和哑类.png)
+
+* 智能指针陷阱
+![智能指针陷阱](智能指针陷阱.png)
+
+### unique_ptr
+
+* 一个unique_ptr独占所指向的对象,也就是说在unique_ptr被销毁时,其对应的内存一定会被释放.
+
+* unique_ptr不支持拷贝,不支持赋值(即用unique_ptr对象赋值)
+
+* unique_ptr操作
+![unique_ptr操作](unique_ptr操作.png)
+
+* 切换指针的所用权
+![切换指针的所用权](切换指针的所用权.png)
+
+* unique_ptr赋值例外,允许将局部的unique_ptr作为返回值(返回时发生赋值操作)
+![unique_ptr赋值例外](unique_ptr赋值例外.png)
+
+* 向unique_ptr传递删除器
+![向unique_ptr传递删除器](向unique_ptr传递删除器.png)
+
+### weak_ptr
+
+* 弱指针不控制所指向对象的生存期,它指向shared_ptr管理的对象,weak_ptr绑定到shared_ptr上不会改变其引用计数.在shared_ptr的引用计数为0时,不管有没有弱指针,都会进行内存释放.
+
+* weak_ptr操作
+![weak_ptr操作](weak_ptr操作.png)
 
 ## 动态数组
 
+* new T[n]创建动态数组,其中的n可以是0,但是返回值不能解引用.(不能定义长度为0的数组,但创建动态数组是合法的)
 
+* delete[] p 用于删除动态数组
+
+* 智能指针和动态数组
+![智能指针和动态数组](智能指针和动态数组.png)
+
+### allocator类
+
+* allocator类及其算法
+![allocator类及其算法](allocator类及其算法.png)
+
+* allocator操作详解
+![allocator操作详解](allocator操作详解.png)
+
+## 使用标准库:文本查询程序(Program)
+
+* page 430
+
+# 拷贝控制
+
+## 拷贝,赋值与销毁
+
+## 拷贝控制和资源管理
+
+## 交换操作
+
+## 拷贝控制示例
+
+## 动态内存管理类
+
+## 对象移动
